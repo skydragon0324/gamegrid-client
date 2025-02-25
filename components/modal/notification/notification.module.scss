@@ -1,0 +1,385 @@
+@import "~/styles/variables.scss";
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: -18px;
+
+  .closebutton {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    border: 1px solid #221e29;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.023);
+    }
+
+    svg {
+      width: 15px;
+      height: 15px;
+      stroke: $thirty;
+    }
+  }
+}
+
+.notificationModalContainer {
+  // z-index: 100;
+
+  .notificationTypeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 4px;
+    // height: 300px;
+    // position: relative;
+    // background-color: red;
+
+    .notificationImgWrapper {
+      // background-color: yellow;
+      width: 100px;
+      height: 100px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .circle_one {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #3CCB7F;
+        position: absolute;
+        top: 17px;
+        left: 12px;
+      }
+
+      .circle_two {
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background-color: #3CCB7F;
+        position: absolute;
+        top: 25px;
+        right: 20px;
+      }
+
+      .circle_three {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: #3CCB7F;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+      }
+
+      .circle_four {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: #3CCB7F;
+        position: absolute;
+        bottom: 12px;
+        right: 12px;
+      }
+
+      .circle_main {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 80px;
+        border: 1px solid #EDFCF2;
+
+
+        svg {
+          width: 50%;
+          height: 50%;
+          fill: #fff;
+        }
+      }
+
+      .circle_success_color {
+        background: var(--Success-400, #3CCB7F);
+        box-shadow: 0px 10px 10px -5px rgba(22, 179, 100, 0.04), 0px 15px 25px -5px rgba(22, 179, 100, 0.16);
+      }
+
+      .circle_error_color {
+        background: var(--error-500-default, #F04438);
+        box-shadow: 0px 25px 50px -12px rgba(240, 68, 56, 0.25);
+      }
+
+      .circle_warning_color {
+        background: var(--Warning-300, #FEC84B);
+        box-shadow: 0px 10px 10px -5px rgba(254, 200, 75, 0.04), 0px 15px 25px -5px rgba(254, 200, 75, 0.15);
+      }
+
+    }
+
+  }
+
+  .content {
+    .label {
+      font-size: 12px;
+      text-transform: uppercase;
+      color: $secondary;
+      margin-bottom: 8px;
+      font-weight: 500;
+      margin-left: 5px;
+    }
+  }
+
+}
+
+.notificationContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // padding: 24px;
+  gap: 24px;
+
+  .notificationInfoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    .notificationInfoTitle {
+      color: var(--White, #FFF);
+      text-align: center;
+      font-family: Montserrat;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    .notificationInfoMessage {
+      color: var(--Secondry-Purple-Ash, #9B95A5);
+      text-align: center;
+      font-family: Nunito Sans;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  .notificationBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 24px;
+
+    .notificationBodyTitle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+
+      .bodyTitle {
+        color: var(--Secondry-Purple-Ash, #9B95A5);
+        text-align: center;
+        font-family: Nunito Sans;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+
+      .bodyWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+
+        .exchange {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 4px;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background-color: #5F586A;
+          position: relative;
+
+          .exchangeIcon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            top: 2px;
+            left: 3px;
+            position: absolute;
+          }
+        }
+
+        .bodyAmount {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 4px;
+
+          .amountIcon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+          }
+
+          .amountText {
+            color: var(--White, #FFF);
+            font-family: Inter;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+          }
+        }
+
+      }
+    }
+
+    .notificationDetailWrapper {
+      border-radius: 12px;
+      background: #211D28;
+      width: 100%;
+
+      .notificationDetail {
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        // justify-content: flex-start;
+        align-items: center;
+        gap: 16px;
+
+        .detailInfo {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+
+          .detailInfoTitle {
+            display: flex;
+            justify-content: flex-start;
+            width: 45%;
+            color: var(--White, #FFF);
+            text-align: center;
+
+            font-family: Nunito Sans;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+          }
+
+          .detailInfoDesc {
+            display: flex;
+            justify-content: flex-end;
+            width: 45%;
+            align-items: center;
+            gap: 12px;
+
+            .addressTitle {
+              color: var(--Secondry-Purple-Ash, #9B95A5);
+              text-align: right;
+
+              font-family: Inter;
+              font-size: 12px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+
+              width: 100%;
+              max-width: 70%;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+
+            .copyButton {
+              // width: 20px;
+              height: 25px;
+              display: flex;
+              align-items: center;
+              border-radius: 10px;
+              justify-content: center;
+              margin: 0;
+              transition: background-color 0.2s ease-in-out;
+
+              &:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+              }
+
+              svg {
+                width: 15px;
+                stroke: $secondary;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .notificationButtonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+    .leftButton {
+      display: flex;
+      padding: 12px 20px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 16px;
+      background: var(--Charocal-Tints-95, #181818);
+      color: var(--Charocal-Tints-0, #FFF);
+      font-family: Inter;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 24px;
+      /* 150% */
+      flex: 1;
+    }
+
+    .rightButton {
+      display: flex;
+      flex: 1;
+      padding: 12px 20px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 16px;
+      background: var(--Primary-Vibrant-Purple, #8962F8);
+      color: var(--Charocal-Tints-0, #FFF);
+
+      font-family: Inter;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 24px;
+      /* 150% */
+    }
+  }
+}

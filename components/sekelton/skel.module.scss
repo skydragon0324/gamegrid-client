@@ -1,0 +1,26 @@
+.skeleton {
+  background: rgba(242, 242, 242, 0.05);
+
+  // animation: shimmer 5s ease-in-out infinite forwards;
+  animation: loadingAnimation 1s infinite alternate;
+
+
+  @media (max-width: 700px) {
+    margin: 0 auto;
+  }
+}
+
+// @keyframes shimmer {
+//   100% {
+//     background-position: 600px 0;
+//   }
+// }
+
+@keyframes loadingAnimation {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,37 @@
+@import "~/styles/variables.scss";
+
+.tabs {
+  position: relative;
+  .tabsfill {
+    height: 100%;
+    border-radius: 14px;
+    background: #221e29;
+    position: absolute;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+  }
+  .tabscontent {
+    // display: flex;
+    // flex-wrap: wrap;
+    background-color: #0d0b14;
+    border-radius: 12px;
+    border: 1px solid #221e29;
+    display: grid;
+    overflow: hidden;
+    button {
+      padding: 17px 0px;
+      color: $secondary;
+      font-size: 14px;
+      font-style: normal;
+      text-align: center;
+      font-weight: 700;
+      line-height: normal;
+      text-align: center;
+      z-index: 2;
+      position: relative;
+      &.active {
+        color: #fff;
+      }
+    }
+  }
+}

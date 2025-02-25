@@ -1,0 +1,40 @@
+@import "~/styles/variables.scss";
+
+
+.main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // min-height: 100vh;
+  // background-color: black;
+}
+.progressRing {
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+.backgroundRect {
+  fill: transparent;
+  stroke-width: 4px;
+  stroke: #221F28;
+}
+.progressRect {
+  fill: transparent;
+  stroke-width: 4px;
+  stroke: #8962F8;
+  // transition: stroke-dashoffset 0.35s;
+  transition: 1s linear all;
+  stroke-dasharray: 320; // Example value, should match the calculated circumference
+  stroke-dashoffset: 320; // Initial offset, same as stroke-dasharray
+}
+.timer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+}

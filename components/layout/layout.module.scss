@@ -1,0 +1,47 @@
+@import "~/styles/functions";
+
+// @Layout component styles.
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &Row {
+    width: 100%;
+    margin: 0 auto;
+    // overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(241, 241, 241, 0.048);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(241, 241, 241, 0.24);
+      border-radius: 5px;
+    }
+  }
+  &Sidebar {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    padding-right: 20px;
+  }
+  &Column {
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+    // max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 80px;
+    z-index: 1;
+  }
+}

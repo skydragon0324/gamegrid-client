@@ -1,0 +1,261 @@
+@import "./normalize";
+@import "./variables";
+
+body {
+  box-sizing: border-box;
+  background: $main-bg !important;
+  font-family: Inter, sans-serif;
+  overflow: hidden !important;
+}
+
+.fadeout {
+  opacity: 0;
+  pointer-events: none;
+  animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+.contentinsider {
+  width: calc(100% - 20px);
+  max-width: 1500px;
+  margin: 0 auto;
+  @media (max-width: 1500px) {
+    padding: 0 20px;
+    width: calc(100% - 40px) !important;
+  }
+}
+
+// @Modal component global styles.
+.ReactModal {
+  &__Overlay {
+    display: flex;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 24px;
+    z-index: 9999;
+    opacity: 0;
+    overflow: hidden auto;
+    background: rgba(12, 8, 17, 0.9) !important;
+    backdrop-filter: blur(12px);
+    transition: opacity 0.3s ease-in-out;
+    @media (max-width: 767px) {
+      overflow: unset;
+      padding: 0;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &--after-open {
+      opacity: 1;
+    }
+
+    &--before-close {
+      opacity: 0;
+    }
+  }
+
+  &__Content {
+    transform: translateY(-15%);
+    opacity: 0;
+    outline: none;
+    transition:
+      transform 0.3s ease-in-out,
+      opacity 0.3s ease-in-out;
+    @media (max-width: 767px) {
+      transform: none;
+    }
+
+    &--after-open {
+      opacity: 1;
+      transform: translateY(0px) !important;
+    }
+
+    &--before-close {
+      opacity: 0;
+      transform: translateY(-15%);
+    }
+  }
+}
+
+.primarybutton {
+  background: $main;
+  border-radius: 14px;
+  border: none;
+  padding: 14px 0;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  &:hover {
+    background: darken($main, 5%);
+  }
+}
+
+.disabled {
+  cursor: not-allowed !important;
+  opacity: 0.5  !important;
+  pointer-events: none !important;
+}
+
+.checkbox {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 22px;
+  width: 25px;
+  height: 25px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  &[aria-disabled="true"] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+/* Hide the browser's default checkbox */
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #221e29;
+  border-radius: 6px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox:hover input ~ .checkmark {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox input:checked ~ .checkmark {
+  background-color: $main;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox .checkmark:after {
+  left: calc(50% - 5.5px);
+  top: calc(50% - 1px);
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+
+  transform: rotate(45deg) translate(-50%, -50%);
+}
+// ::-webkit-scrollbar {
+//   width: 1px;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//   background: transparent;
+//   border-radius: 10px;
+// }
+
+// ::-webkit-scrollbar-thumb:hover {
+//   background: transparent;
+// }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
+
+.toggleswitch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 25px;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(204, 204, 204, 0.081);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 19px;
+    width: 19px;
+    left: 3px;
+    bottom: 2.7px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  input:checked + .slider {
+    background-color: $main;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px $main;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 10px;
+  }
+
+  .slider.round:before {
+    border-radius: 40%;
+  }
+}

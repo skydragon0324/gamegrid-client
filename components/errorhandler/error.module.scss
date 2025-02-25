@@ -1,0 +1,23 @@
+.errorPage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #4672ff;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  p {
+    max-width: 400px;
+    font-size: 2rem;
+    font-weight: 400;
+    width: max-content;
+    color: #8996d9;
+    margin: 0 auto;
+    text-align: center;
+  }
+}

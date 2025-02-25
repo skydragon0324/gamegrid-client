@@ -1,0 +1,57 @@
+.container {
+  position: relative;
+  .button {
+    position: relative;
+    z-index: 8;
+  }
+  .overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    pointer-events: none;
+
+    &.opened {
+      pointer-events: all;
+    }
+  }
+
+  .list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: max-content;
+    padding: 10px;
+    margin: 0 auto;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transform: translateY(0px);
+    opacity: 1;
+    transition: all 0.3s ease;
+    pointer-events: all;
+
+    &.ndsp {
+      transform: translateY(-3px);
+      opacity: 0;
+    pointer-events: none;
+
+    }
+
+
+    &Item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    & > button {
+      text-overflow: ellipsis;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+/** px to rem **/
+
+@function calcRem($px) {
+  @return calc($px / 10) + rem;
+}
+
+/** calculating line-height **/
+
+@function lh($lh, $fs) {
+  @return calc($lh / $fs);
+}
+
+/** calculating width in percents **/
+
+@function cw($realWidth, $wholeWidth) {
+  @return calc(($realWidth / $wholeWidth) * 100%);
+}

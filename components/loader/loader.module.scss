@@ -1,0 +1,32 @@
+@import "/styles/variables.scss";
+
+.centered {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.loader {
+  &Content {
+    display: block !important;
+    width: 15px;
+    height: 15px;
+    position: unset;
+    transform: unset;
+    text-indent: -9999em;
+    border-radius: 50%;
+    border-left: 2px solid #fff;
+    animation: looper 0.2s infinite linear;
+
+    &.secondary {
+      border-left: 2px solid $main;
+    }
+  }
+}
+
+@keyframes looper {
+  to {
+    transform: rotate(360deg);
+  }
+}

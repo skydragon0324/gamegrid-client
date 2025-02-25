@@ -1,0 +1,412 @@
+@import "~/styles/variables.scss";
+
+.authmodal {
+  width: 500px !important;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: var(--Tt, #16131c);
+  box-shadow: 0px 19px 41px 0px rgba(0, 0, 0, 0.25),
+    0px 74px 74px 0px rgba(0, 0, 0, 0.21),
+    0px 167px 100px 0px rgba(0, 0, 0, 0.13),
+    0px 296px 119px 0px rgba(0, 0, 0, 0.04),
+    0px 463px 130px 0px rgba(0, 0, 0, 0);
+  padding: 24px;
+
+  @media (max-width: 768px) {
+    & > * {
+      width: calc(100% - 40px) !important;
+    }
+  }
+
+  .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      width: 104px;
+    }
+
+    .closebutton {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      border: 1px solid #221e29;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.023);
+      }
+      svg {
+        width: 15px;
+        height: 15px;
+        stroke: $thirty;
+      }
+    }
+  }
+
+  .switcher {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    border-radius: 14px;
+    border: 1px solid #1f1c25;
+    background: #0d0b14;
+    margin-top: 20px;
+    transition: border 0.2s ease-in-out;
+
+    button {
+      padding: 13px 0;
+      text-align: center;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      position: relative;
+      z-index: 3;
+      border-radius: 14px;
+      transition: color 0.2s ease-in-out, background-color 0.25s ease-in;
+      position: relative;
+      span {
+        color: $secondary;
+      }
+      &.active {
+        span {
+          color: #fff;
+        }
+      }
+    }
+
+    button {
+      &:first-child {
+        &::after {
+          content: "";
+          display: block;
+          width: 0;
+          height: 2px;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0%;
+          right: inherit;
+          height: 100%;
+          z-index: 1;
+          border-radius: 14px;
+          transition: left 0.2s ease-out;
+        }
+
+        & > * {
+          position: relative;
+          z-index: 2;
+        }
+
+        &.active {
+          &::after {
+            background: #221e29;
+            left: 0;
+          }
+        }
+
+        &:not(&.active) {
+          &::after {
+            background: #221e29;
+            left: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .backBtn {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    color: $thirty;
+    margin-top: 0px;
+    transition: all 0.3s ease;
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, 0.036);
+    margin-bottom: 10px;
+    svg {
+      width: 15px;
+      stroke: $thirty;
+      transition: all 0.3s ease;
+    }
+
+    span {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      color: $secondary;
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.087);
+
+      span {
+        color: #fff;
+      }
+      svg {
+        stroke: #fff;
+      }
+    }
+  }
+
+  .hr {
+    opacity: 0.04;
+    background: #fff;
+    width: 100%;
+    height: 1px;
+    margin: 10px auto;
+  }
+
+  form {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    & > p {
+      margin: 5px 0 5px 5px;
+      font-size: 12px;
+      font-style: normal;
+      user-select: none;
+      color: $secondary;
+      font-weight: 500;
+      line-height: 20px; /* 142.857% */
+    }
+    .passInput {
+      width: 100%;
+      position: relative;
+      input {
+        width: calc(100% - 30px);
+      }
+      .hidePassButton,
+      & > button {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 32px;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: background-color 0.3s ease-in-out;
+        display: flex;
+
+        &:hover {
+          background-color: #1f1d26;
+        }
+        svg {
+          width: 20px;
+          fill: $thirty;
+        }
+      }
+    }
+    .formstatus {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-radius: 12px;
+      border: 1px solid #1f1c25;
+
+      background: #1d1924;
+      padding: 16px;
+      .formstatusItem {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        * {
+          user-select: none;
+        }
+
+        span {
+          color: $secondary;
+          font-size: 13px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          transition: color 0.2s ease-in-out;
+        }
+        svg {
+          width: 13px;
+          fill: $secondary;
+          transition: fill 0.2s ease-in-out;
+        }
+
+        &.success {
+          span {
+            color: #fff;
+          }
+
+          svg {
+            fill: $green;
+          }
+        }
+      }
+    }
+    .formInput {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      .label {
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        color: $secondary;
+        margin-left: 5px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .error {
+          color: $red;
+        }
+      }
+
+      input {
+        padding: 12px;
+        border-radius: 12px;
+        border: 1px solid #1f1c25;
+        color: #fff;
+        background: #0d0b14;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        transition: border 0.2s ease-in-out;
+        &::placeholder {
+          color: $thirty;
+        }
+        &:hover,
+        &:focus {
+          border: 1px solid #332f3c;
+        }
+      }
+
+      .inputsVerify {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        input {
+          width: calc(100% - 8px);
+          flex: 1;
+          padding: 15px 20px;
+          font-family: Montserrat;
+          text-align: center;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          text-transform: uppercase;
+        }
+      }
+
+      .date {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        span {
+          flex-basis: 16px;
+          text-align: center;
+          color: $thirty;
+        }
+        input {
+          width: calc(100% - 8px);
+          flex: 1;
+        }
+      }
+      .forgotLb {
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        color: $thirty;
+        margin-right: 5px;
+        cursor: pointer;
+        transition: color 0.2s ease-in-out;
+        text-align: right;
+        text-decoration: underline;
+        &:hover {
+          color: $secondary;
+        }
+      }
+    }
+  }
+
+  .labelMd {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: $secondary;
+    text-align: center;
+  }
+  .socialButtons {
+    display: grid;
+    // grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    align-items: center;
+    button {
+      border-radius: 12px;
+      background: #221e29;
+      padding: 15px 0;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      transition: background 0.2s ease-in-out;
+      &:hover {
+        background: #2b2732;
+      }
+      svg {
+        width: 18px;
+      }
+      span {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        color: $secondary;
+      }
+    }
+  }
+
+  .loginbutton {
+    height: 50px;
+    // padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    background-color: $main;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    border-radius: 14px;
+    line-height: normal;
+    // margin-top: 10px;
+    transition: background-color 0.2s ease-in-out;
+    &:hover {
+      background-color: darken($main, 5%);
+    }
+  }
+}

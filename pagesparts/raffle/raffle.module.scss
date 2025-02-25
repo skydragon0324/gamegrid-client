@@ -1,0 +1,314 @@
+@import "~/styles/variables";
+
+.container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 40px auto 0 auto;
+  height: 100vh;
+  & > h2 {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    color: #fff;
+  }
+  .firstCont {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 24px;
+    .detailsCard {
+      width: calc(50% - 38px);
+      border-radius: 12px;
+      border: 1px solid var(--Secondry-Deep-Purple, #1d1924);
+      background: var(--Secondry-Black-Purple, #16131c);
+      /* Vibrant Purple/Base */
+      box-shadow:
+        0px 1px 3px 0px rgba(137, 98, 248, 0.1),
+        0px 1px 2px 0px rgba(137, 98, 248, 0.06);
+      padding: 16px;
+      display: flex;
+      gap: 16px;
+      justify-content: space-between;
+      align-items: center;
+
+      display: grid;
+      grid-template-columns: 1fr 204px;
+      gap: 24px;
+      .left {
+        width: 100%;
+        .buttons {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 10px;
+          margin-top: 20px;
+          .buttonMain {
+            padding: 15px 30px;
+            background-color: $main;
+            border-radius: 18px;
+            color: #fff;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            transition: background-color 0.25s ease-in-out;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            @media (max-width: 500px) {
+              width: calc(100% - 40px);
+            }
+
+            svg {
+              width: 17px;
+              path {
+                fill: #fff;
+              }
+            }
+            &:hover {
+              background-color: darken($main, 5%);
+            }
+          }
+
+          .buttonSecond {
+            padding: 15px 30px;
+            border: 1px solid $secondary;
+            border-radius: 18px;
+            color: $secondary;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            transition: background-color 0.25s ease-in-out;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            @media (max-width: 500px) {
+              width: calc(100% - 40px);
+            }
+            svg {
+              width: 17px;
+            }
+            &:hover {
+              background-color: rgba(255, 255, 255, 0.057);
+            }
+          }
+        }
+      }
+      .cardLevel {
+        border-radius: 8px;
+        background: var(--Secondry-Stroke, rgba(255, 255, 255, 0.05));
+        box-shadow: 0px 4px 32px -4px rgba(111, 39, 230, 0.15);
+        width: 204px;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        h3 {
+          color: var(--White, #fff);
+          /* Header/Header 4 */
+          font-family: Montserrat;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 26px; /* 144.444% */
+          text-transform: uppercase;
+          margin: 0;
+          margin-bottom: 10px;
+        }
+        p {
+          color: var(--Secondry-Purple-Ash, #bdb7c7);
+          text-align: center;
+          /* Sub - Header/Content 3 */
+          font-family: Inter;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 22px; /* 157.143% */
+          letter-spacing: -0.42px;
+        }
+        span {
+          color: var(--White, #fff);
+          text-align: center;
+          /* Header/Header 5 */
+          font-family: Montserrat;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 24px; /* 150% */
+        }
+        .bar {
+          width: calc(100% - 40px);
+          height: 6px;
+          margin: 10px auto 0 auto;
+          border-radius: 250px;
+          background: var(--Secondry-Stroke, rgba(255, 255, 255, 0.05));
+          position: relative;
+          div {
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 250px;
+            background: var(
+              --Primary-Lootcoin,
+              linear-gradient(
+                116deg,
+                #fdb022 0.61%,
+                #fec84b 49.74%,
+                #fedf89 110.8%
+              )
+            );
+          }
+        }
+        .polygon {
+          width: 97px;
+          height: 103px;
+          background-image: url("/svgs/polygon-golden.svg");
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 45px;
+          color: #7a2e0e;
+          font-weight: bold;
+          // font-family: Montserrat;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    .levels {
+      width: calc(50% - 22px);
+      .swiper {
+      }
+      .levelcard {
+        width: 225px;
+        border-radius: 12px;
+        // border: 1px solid var(--Primary-Vibrant-Purple, #8962f8);
+        background: var(--Secondry-Stroke, rgba(255, 255, 255, 0.05));
+        // box-shadow: 0px 12px 32px -4px rgba(137, 98, 248, 0.25);
+        backdrop-filter: blur(12px);
+        border: 1px solid var(--Secondry-Stroke, rgba(255, 255, 255, 0.05));
+        height: 300px;
+      }
+    }
+  }
+
+  .profilesection {
+    display: grid;
+    grid-template-columns: 104px auto;
+    gap: 12px;
+    width: 100%;
+    // padding: 20px;
+    margin-top: 10px;
+
+    @media (max-width: 350px) {
+      grid-template-columns: 60px auto;
+      gap: 10px;
+    }
+
+    .circleAvatar {
+      width: 104px;
+      height: 104px;
+      background-size: cover;
+      position: relative;
+      border-radius: 50%;
+
+      background-color: rgba(255, 255, 255, 0.033);
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition-property: opacity, border;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-in-out;
+      &:hover {
+        border: 1px solid $main;
+        opacity: 0.8;
+      }
+
+      @media (max-width: 350px) {
+        width: 60px;
+        height: 60px;
+      }
+
+      .line {
+        width: 25px;
+        height: 27px;
+        background-image: url("/svgs/polygon.svg");
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        position: absolute;
+        bottom: 4px;
+        right: 6px;
+        z-index: 1;
+      }
+    }
+    .details {
+      margin-top: 5px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      height: max-content;
+      @media (max-width: 350px) {
+        margin-top: 0;
+        gap: 8px;
+      }
+
+      h3 {
+        font-family: Montserrat;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 26px; /* 144.444% */
+        text-transform: uppercase;
+        color: #fff;
+      }
+
+      .progressline {
+        .progressLevel {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          span {
+            font-size: 16px;
+            color: #fff;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            font-family: Inter;
+          }
+          .bar {
+            width: calc(100% - 40px);
+            height: 6px;
+            border-radius: 6px;
+            background-color: rgba(255, 255, 255, 0.054);
+            position: relative;
+            overflow: hidden;
+            margin-top: 5px;
+            div {
+              width: 40%;
+              height: 100%;
+              background-color: $main;
+              border-radius: 4px;
+
+              transition: width 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+            }
+          }
+        }
+      }
+    }
+  }
+}
